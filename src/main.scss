@@ -1,0 +1,21 @@
+@charset "UTF-8";
+// main scss file
+
+// Susy
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/2,
+  gutter-position: split,
+);
+
+// Imports
+@import 'sass/0-tools/tools';
+
+@import 'sass/1-config/config';
+@import 'sass/1-config/reset';
+
+
+@import 'sass/2-base/base';
+@import 'sass/2-base/typography';
