@@ -24,7 +24,7 @@ gulp.task('sass', function(){
 
 // pug to html
 gulp.task('pug', function buildHTML() {
-  return gulp.src('src/index.pug')
+  return gulp.src('src/*.pug')
   .pipe(pug({pretty: true}))
   .pipe(gulp.dest('build'))
   .pipe(browserSync.stream());
@@ -47,8 +47,7 @@ gulp.task('run', ['sass', 'pug', 'browser-sync']);
 gulp.task('watch', ['browser-sync', 'sass', 'pug'], function() {
    gulp.watch('src/main.scss', ['sass']);
    gulp.watch('src/sass/**/*.sass', ['sass']);
-   gulp.watch('src/index.pug', ['pug']);
-   gulp.watch('src/pug/**/*.pug', ['pug']);
+   gulp.watch('src/**/*.pug', ['pug']);
    gulp.watch('build/img/**/*.svg', browserSync.reload);
    //gulp.watch('src/js/**/*.js', browserSync.reload);
 });
